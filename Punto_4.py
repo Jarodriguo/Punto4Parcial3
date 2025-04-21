@@ -50,7 +50,7 @@ def procesar(segmentos, reqs, marcos_libres):
 
 def print_results(results):
     for result in results:
-        print(f"Req: {result[0]:#04x} Direccion Fisica: {result[1]:#04x} Acción: {result[2]}")
+        print(f"Req: {result[0]:#0{4}x} Direccion Fisica: {result[1]:#0{4}x} Acción: {result[2]}")
 
 
 if __name__ == '__main__':
