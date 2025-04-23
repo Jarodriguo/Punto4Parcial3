@@ -1,8 +1,8 @@
-TAM_PAGINA = 32
+TAM_PAGINA = 16
 SEGFAULT_ADDR = 0x1FF
 
 def procesar(segmentos, reqs, marcos_libres):
-    tabla_paginas = {}          # (segmento, página) -> marco
+    tabla_paginas = {}
     cola_paginas = []
     resultados = []
     marcos_disponibles = list(marcos_libres)
@@ -20,7 +20,7 @@ def procesar(segmentos, reqs, marcos_libres):
         # Si no pertenece a ningún segmento → Segmentation Fault
         if segmento is None:
             resultados.append((req, SEGFAULT_ADDR, "Segmentation Fault"))
-            continue
+            break
 
         desplazamiento = req - base
         pagina = desplazamiento // TAM_PAGINA
